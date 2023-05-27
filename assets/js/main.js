@@ -14,7 +14,7 @@ function load(){
 }
 
 function addTask(e){
-    if(input.value === " "){
+    if(input.value === ""){
         msg.innerHTML = "Please add a Task";
         msg.classList.add("error");
 
@@ -33,11 +33,11 @@ function addTask(e){
        }, 1000)
        
        const lists = document.createElement("li")
-       lists.className = "list-group-item pe-3 me-0 mt-2  border-1 border-bottom border-black"
+       lists.className = "list-group-item pe-3 me-0 mt-2  border-1 border-bottom border-secondary"
        lists.appendChild(document.createTextNode (input.value))
 
        const link = document.createElement('a')
-       link.className = "float-end "
+       link.className = "float-end text-dark"
        link.innerHTML = '<i class="bi bi-trash-fill"></i>'
 
        lists.appendChild(link)
@@ -54,7 +54,7 @@ function clearTask(e){
     ul.innerText = " "
 
     msg.innerHTML = "Tasks Cleared Successfully";
-        msg.classList.add("success");
+        msg.classList.add("error");
 
        setTimeout(function(){
         msg.innerHTML = ""
